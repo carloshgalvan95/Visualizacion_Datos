@@ -1,0 +1,161 @@
+\documentclass[12pt,a4paper]{article}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% Configuración de página
+\geometry{margin=2.2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{A01797969}
+\lhead{Actividad 4 - Cómputo Cognitivo}
+\rfoot{\thepage}
+
+% Configuración de código
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Compactar listas
+\usepackage{enumitem}
+\setlist{itemsep=1pt, parsep=1pt, topsep=3pt}
+
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\LARGE\bfseries Actividad 4\par}
+    \vspace{0.5cm}
+    {\Large Exploración de Herramientas de Cómputo Cognitivo\par}
+    \vspace{2cm}
+    {\large Estudiante: A01797969\par}
+    \vspace{0.5cm}
+    {\large Ciencia y Analítica de Datos\par}
+    \vfill
+    {\large Octubre 4, 2025\par}
+\end{titlepage}
+
+\section{Introducción}
+
+El cómputo cognitivo permite a las máquinas procesar y comprender información de manera similar a los humanos, transformando contenido no estructurado (imágenes, audio, video) en datos estructurados accionables. Este informe analiza tres plataformas líderes que ofrecen capacidades avanzadas de análisis cognitivo: AWS Rekognition, Microsoft Azure Face API, y Google Cloud Vision AI.
+
+\section{Amazon Rekognition}
+
+\subsection{Descripción}
+\textbf{Proveedor:} Amazon Web Services (AWS). Servicio de análisis de imágenes y videos basado en \textit{deep learning}, sin requerir experiencia en ML.
+
+\subsection{Funcionalidades y Aplicaciones}
+Rekognition ofrece análisis facial (hasta 100 rostros/imagen) con detección de 8 emociones, rango de edad, género y atributos; comparación y verificación facial; detección de objetos y escenas; moderación de contenido; y procesamiento de video en tiempo real. Los datos extraídos incluyen coordenadas faciales, emociones con niveles de confianza, y atributos demográficos en formato JSON estructurado.
+
+\textbf{Aplicaciones:} Aeropuertos (verificación de identidad), retail (análisis demográfico), NFL (identificación de jugadores), marketing (análisis emocional en \textit{focus groups}). Modelo ``pay-as-you-go'': \$1.00 USD/1,000 imágenes. \textit{Free tier}: 5,000 imágenes/mes (12 meses).
+
+\section{Microsoft Azure Cognitive Services - Face API}
+
+\subsection{Descripción}
+\textbf{Proveedor:} Microsoft Corporation. Parte de Azure Cognitive Services, ofrece análisis facial avanzado con énfasis en privacidad y cumplimiento normativo.
+
+\subsection{Funcionalidades y Aplicaciones}
+Face API ofrece detección facial con 8 emociones, edad específica, género, postura de cabeza (\textit{yaw/pitch/roll}), atributos (vello, accesorios, maquillaje), verificación 1:1 e identificación 1:N, agrupación automática, y detección de viveza (\textit{anti-spoofing}) única entre las tres plataformas. Extrae datos en formato Python/JSON con \textit{faceId}, atributos detallados y métricas de calidad.
+
+\textbf{Aplicaciones:} Salud (monitoreo emocional psiquiátrico), educación (\textit{engagement} en e-learning), RRHH (entrevistas virtuales), seguridad (búsqueda de personas). Microsoft requiere aprobación explícita para casos de vigilancia, cumpliendo GDPR. Costo: \$1.00 USD/1,000 transacciones. \textit{Free tier}: 30,000/mes.
+
+\section{Google Cloud Vision AI y Video Intelligence API}
+
+\subsection{Descripción}
+\textbf{Proveedor:} Google Cloud Platform. Suite integrada que combina análisis de imágenes y videos mediante modelos pre-entrenados y personalizables.
+
+\subsection{Funcionalidades y Aplicaciones}
+\textbf{Vision AI} detecta etiquetas (objetos, ubicaciones, actividades), emociones faciales (alegría, tristeza, enojo, sorpresa), texto OCR (50+ idiomas), contenido explícito (SafeSearch), y logotipos comerciales. \textbf{Video Intelligence} ofrece segmentación temporal, \textit{tracking} de objetos \textit{frame-by-frame}, detección de personas, y transcripción de audio. Por políticas de equidad, Google eliminó detección de edad/género. Los datos se estructuran como \textit{faceAnnotations}, \textit{labelAnnotations} con coordenadas y probabilidades.
+
+\textbf{Aplicaciones:} Getty Images (etiquetado masivo), retail (análisis de planogramas), manufactura (inspección de calidad), accesibilidad (descripciones automáticas). Costo: \$1.50/1,000 imágenes (detección facial), \$0.10/minuto (video). \textit{Free tier}: 1,000 unidades/mes por función.
+
+\section{Comparación de Herramientas}
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\begin{tabular}{@{}p{2.5cm}p{3.2cm}p{3.2cm}p{3.2cm}@{}}
+\toprule
+\textbf{Criterio} & \textbf{AWS Rekognition} & \textbf{Azure Face API} & \textbf{Google Vision} \\ \midrule
+Precisión & Alta (94-98\%) & Muy alta (95-99\%) & Media-Alta \\
+Edad/Género & Rangos, binario & Específica, binario & No disponible \\
+Video & Nativo tiempo real & Integración adicional & API separada \\
+Anti-spoofing & No & Sí & No \\
+Casos principales & Seguridad, media & Salud, educación & Accesibilidad \\ \bottomrule
+\end{tabular}
+\caption{Comparación entre plataformas}
+\end{table}
+
+\section{Reflexión: Ventajas y Limitaciones}
+
+\subsection{Ventajas}
+
+\textbf{Democratización:} Permiten a organizaciones sin \textit{expertise} en ML implementar análisis sofisticados mediante APIs simples. \textbf{Escalabilidad:} Infraestructura cloud procesa desde imágenes individuales hasta millones de videos sin inversión en hardware. \textbf{Mejora continua:} Los modelos se reentrenan constantemente, mejorando \textit{accuracy} automáticamente. \textbf{Impacto multisectorial:} Desde diagnósticos médicos hasta experiencias retail personalizadas.
+
+\subsection{Limitaciones y Consideraciones Éticas}
+
+\textbf{Sesgos algorítmicos:} Estudios demuestran tasas de error más altas en personas de piel oscura, mujeres y grupos subrepresentados. \textbf{Privacidad:} El reconocimiento facial plantea dilemas sobre consentimiento y vigilancia masiva; varias ciudades han prohibido su uso policial. \textbf{Interpretación limitada:} Las emociones detectadas son expresiones faciales, no estados internos reales; la correlación varía culturalmente. \textbf{Dependencia de calidad:} Iluminación, ángulo y oclusiones afectan dramáticamente la precisión. \textbf{Regulación:} El AI Act (UE) y leyes de privacidad biométrica restringen estos usos. \textbf{Costos:} Aplicaciones de alto volumen generan costos significativos.
+
+\subsection{Recomendaciones de Uso Responsable}
+
+Es fundamental implementar \textbf{transparencia} (informar claramente el uso), \textbf{consentimiento explícito} (especialmente en contextos sensibles), \textbf{auditorías continuas} (evaluar desempeño en diferentes demografías), \textbf{uso complementario} (no tomar decisiones críticas basándose únicamente en estas herramientas), y \textbf{diseño ético} (considerar el impacto social desde el inicio).
+
+\section{Conclusión}
+
+Las tres plataformas analizadas representan el estado del arte en transformación de contenido multimedia a datos estructurados. AWS Rekognition destaca por video en tiempo real y completitud funcional; Azure Face API sobresale en privacidad y \textit{anti-spoofing}; Google Cloud Vision lidera en accesibilidad y ética proactiva.
+
+La elección debe basarse en requisitos específicos: presupuesto, integración, privacidad y aplicación objetivo. Es imperativo adoptar marcos de IA responsable, priorizando equidad, transparencia y bienestar humano sobre optimización técnica. El futuro del cómputo cognitivo reside no solo en mejorar la precisión, sino en desarrollar sistemas justos, explicables y alineados con valores humanos fundamentales.
+
+\begin{thebibliography}{9}
+\bibitem{aws}
+Amazon Web Services. (2024). \textit{Amazon Rekognition Developer Guide}. AWS Documentation.
+
+\bibitem{azure}
+Microsoft. (2024). \textit{Azure Cognitive Services Face API Documentation}. Microsoft Azure.
+
+\bibitem{google}
+Google Cloud. (2024). \textit{Vision AI and Video Intelligence API Documentation}. Google Cloud Platform.
+
+\bibitem{bias}
+Buolamwini, J., \& Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. \textit{Proceedings of Machine Learning Research}, 81:1-15.
+
+\bibitem{eu}
+European Union. (2024). \textit{Artificial Intelligence Act}. Official Journal of the European Union.
+
+\bibitem{nist}
+National Institute of Standards and Technology. (2023). \textit{Face Recognition Vendor Test (FRVT) Results}. NIST.
+\end{thebibliography}
+
+\end{document}
