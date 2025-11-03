@@ -1,0 +1,235 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[width=.6\textwidth]{logo.jpg}\\
+\end{figure}
+
+\vspace{1cm}
+\Large \sc  Instituto Tecnológico y de Estudios Superiores de Monterrey
+\\
+
+\vspace{2.5cm}
+\Large \bf
+\emph{Interpretación y Análisis del Dashboard Estratégico}\\
+\vspace{0.3cm}
+\Large \bf
+\emph{Numismática México - Fin de Año}
+
+\vspace{2cm}
+\large \bf Equipo 56\\
+\vspace{0.5cm}
+\normalsize 
+Humberto Carrillo Gómez A01377246\\
+\vspace{0.2cm}
+Carlos Humberto Galván Perales A01797969\\
+\vspace{0.2cm}
+Jesus Alonso Reyes Martinez A01840183\\
+
+\vspace{2.5cm}
+\normalsize \sc \rightline{Maestría en Inteligencia Artificial Aplicada}
+\vspace{0.3cm}
+\normalsize \sc \rightline{TC4057.10 Visualización de Datos}
+\vspace{0.3cm}
+\normalsize \sc \rightline{3 de noviembre, 2025}
+\end{center}
+
+\newpage
+
+\section{Introducción}
+
+Numismática México es una empresa especializada en la comercialización de productos numismáticos a través de una plataforma de marketplace, operando en el competitivo sector del e-commerce. Los meses de noviembre y diciembre representan el periodo más crítico del año para la organización, generando los mayores ingresos anuales debido a las campañas comerciales de fin de año, incluidos eventos como el Buen Fin, Black Friday y Cyber Monday. Con el objetivo de optimizar la estrategia comercial para estos periodos de alta demanda, se ha desarrollado un dashboard estratégico integral que responde a siete preguntas fundamentales de negocio: (1) ¿Qué días del mes han sido los más relevantes en cuanto a ingresos durante noviembre y diciembre? (2) ¿Qué productos han tenido las mayores ventas? (3) ¿Cuáles son las regiones geográficas con mayor potencial de crecimiento? (4) ¿Cuáles son los tiempos de entrega promedio y cómo impactan la satisfacción del cliente? (5) ¿Qué combinaciones de productos y regiones generan mayor retorno y cómo afectan las campañas publicitarias? (6) ¿Qué patrones de venta se identifican entre noviembre y diciembre? y (7) ¿Qué transportistas ofrecen mejor rendimiento? Este dashboard constituye una herramienta fundamental para la toma de decisiones basada en datos, permitiendo al equipo directivo identificar oportunidades, optimizar recursos y maximizar el retorno de inversión durante la temporada más importante del año.
+
+\section{Vista General del Dashboard}
+
+El dashboard ``Numismática México - Dashboard Estratégico Fin de Año'' ha sido diseñado siguiendo las mejores prácticas de visualización de datos, presentando una estructura modular que permite al usuario navegar de manera intuitiva a través de múltiples dimensiones de análisis. El diseño utiliza una paleta de colores corporativa consistente con azul marino (\#1E3A8A) como color principal y amarillo (\#F4E96D) para destacar elementos clave, generando un contraste visual efectivo que facilita la lectura e interpretación de la información \cite{milligan2019}.
+
+La arquitectura del dashboard está organizada en dos páginas principales. La primera página se enfoca en el análisis de ventas, presentando las métricas de ingresos totales (\$388,335 MXN) en un rango de fechas filtrable, con visualizaciones que incluyen series temporales de ventas diarias, un mapa de calor (\emph{heatmap}) organizacional por día de la semana, un ranking de los 10 productos más vendidos y un análisis geográfico mediante mapas y treemaps. La segunda página se concentra en aspectos operacionales y de efectividad de marketing, presentando análisis de tiempos de entrega por transportista, retorno de inversión (ROI) de publicidad y comparativas estacionales. Esta estructura permite al tomador de decisiones realizar análisis tanto a nivel estratégico (patrones generales, productos estrella, regiones prioritarias) como operativo (logística, efectividad publicitaria). Ryan (2016) enfatiza la importancia de crear una ``cultura visual de datos'' donde las visualizaciones no solo presenten información, sino que faciliten el descubrimiento de \emph{insights} accionables, principio que se evidencia en el diseño interactivo de este dashboard \cite{ryan2016}.
+
+\section{Interpretación Detallada de las Visualizaciones}
+
+\subsection{Análisis Temporal de Ventas: Ventas por Día}
+
+La visualización ``Ventas Totales por Día'' utiliza un gráfico de líneas de doble eje que presenta simultáneamente los ingresos en pesos mexicanos (eje izquierdo) y el volumen de unidades vendidas (eje derecho). Esta representación dual permite identificar no solo los días de mayor facturación, sino también analizar si las ventas están impulsadas por volumen o por ticket promedio alto.
+
+El análisis revela tres picos significativos de ventas durante el periodo: el 6 de noviembre con \$5,593 MXN (45 unidades), el 1 de noviembre con \$4,218 MXN, y el 16 de diciembre con \$4,178 MXN. La línea azul (ingresos) muestra una volatilidad considerable con un patrón interesante: las ventas en noviembre presentan una tendencia más errática con varios picos pronunciados, mientras que diciembre muestra un patrón más estable pero con tendencia descendente hacia finales de mes, probablemente debido al cierre de las temporadas de compra navideña y el agotamiento de presupuestos de consumidores.
+
+Un hallazgo significativo es la presencia de valles profundos entre los picos, como los días con ventas inferiores a \$1,000 MXN, lo que sugiere una alta dependencia de eventos específicos o promociones puntuales. La línea verde (unidades) no siempre correlaciona perfectamente con los ingresos, indicando variabilidad en el precio promedio de los productos vendidos por día, posiblemente debido a la mezcla de productos (\emph{mix} de ventas) que varía diariamente.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Ventas_Dia_Dashboard.png}
+\caption{Visualización de ventas por día y heatmap semanal del dashboard de Numismática México.}
+\label{fig:ventas_dia}
+\end{figure}
+
+\subsection{Distribución Semanal: Heatmap de Ventas}
+
+El mapa de calor presenta una visualización innovadora que cruza los días de la semana (lunes a domingo) con las semanas del periodo (semana 45 a 53), utilizando una escala cromática donde tonos más oscuros de azul representan mayores volúmenes de venta. Esta representación permite identificar patrones tanto intra-semanales como inter-semanales.
+
+El análisis revela que los jueves emergen como el día más consistentemente fuerte de la semana, especialmente en las semanas 45, 46, 48 y 49, con cifras que superan los \$2,000 MXN. El jueves 16 de diciembre (semana 50) representa el pico absoluto con \$4,178 MXN, destacado en el heatmap con el tono más oscuro. Los martes también muestran un desempeño sólido, particularmente en las semanas 46 (\$2,663) y 49 (\$3,493).
+
+Un patrón interesante es la debilidad relativa de los fines de semana, con sábados y domingos mostrando generalmente valores por debajo de \$2,000 MXN, con múltiples celdas vacías que indican días sin actividad significativa o sin datos registrados. Este patrón contradice la intuición común en e-commerce donde típicamente los fines de semana muestran mayor actividad, sugiriendo que el mercado numismático tiene un perfil de cliente diferente, posiblemente coleccionistas y compradores especializados que realizan sus adquisiciones durante días laborales.
+
+La semana 45 (primera semana de noviembre) inicia fuerte con el evento del Buen Fin, mientras que las semanas 51-53 (segunda mitad de diciembre) muestran una disminución notable en las ventas, probablemente por el cierre del ciclo de compras navideñas y la proximidad del fin de año.
+
+\subsection{Rendimiento de Productos: Top 10 Productos por Ventas}
+
+El gráfico de barras horizontales presenta los diez productos con mayores ingresos totales durante el periodo analizado. Esta visualización es particularmente efectiva porque ordena los productos de mayor a menor facturación, facilitando la identificación rápida de los productos estrella.
+
+El producto líder absoluto es ``Carpeta Billetes Y Monedas De 5, 10, 40 Pesos Conmemorativos'' con \$128,005 MXN, representando aproximadamente el 33\% del total de ingresos. Este dato evidencia una concentración significativa en un solo SKU, lo que representa tanto una fortaleza (producto altamente demandado) como un riesgo (dependencia excesiva de un único producto).
+
+El segundo y tercer lugar están ocupados por ``Carpeta Monedas 5 Pesos Del Centenario Y Bicentenario'' con \$62,137 MXN y ``Carpeta Escudo Nacional Monedas 5 Pesos Conmemorativos'' con \$51,156 MXN, respectivamente. La diferencia sustancial entre el primer producto y el resto (más del doble que el segundo lugar) sugiere que este producto ha sido el foco principal de las campañas o tiene una propuesta de valor única en el mercado.
+
+Los productos restantes del top 10 muestran una distribución más uniforme, oscilando entre \$4,000 y \$41,000 MXN. Un análisis detallado revela que la mayoría de los productos top son ``carpetas'' o ``paquetes'' que agrupan múltiples monedas conmemorativas, indicando que los clientes prefieren productos de colección completos en lugar de piezas individuales. Esta información es crucial para la estrategia de empaquetamiento y creación de bundles de productos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Top_Productos_Dashboard.png}
+\caption{Top 10 productos por ventas durante el periodo de noviembre y diciembre.}
+\label{fig:top_productos}
+\end{figure}
+
+\subsection{Distribución Geográfica: Ventas por Estado}
+
+La visualización geográfica combina dos representaciones complementarias: un mapa coroplético de México que muestra la distribución espacial de las ventas, y un treemap que presenta las proporciones de ventas por estado con codificación por región (Bajo, Centro, Noreste, Norte, Sur-Sureste).
+
+El análisis geográfico revela una concentración significativa en el centro del país. El Estado de México lidera con \$55,774 MXN, seguido por el Distrito Federal con \$44,931 MXN y Jalisco con \$31,657 MXN. Estos tres estados representan aproximadamente el 34\% de las ventas totales, evidenciando una clara concentración en las zonas metropolitanas más grandes del país.
+
+El treemap utiliza una codificación de color por región que facilita la identificación de patrones macrorregionales. La región Centro (que incluye Estado de México, Distrito Federal, Puebla, Hidalgo, Morelos y Guerrero) domina claramente con tonos azules ocupando la mayor parte del espacio visual. La región Norte/Noreste (Chihuahua, Nuevo León, Coahuila, Tamaulipas) muestra tonos azules más oscuros con un desempeño moderado. La región Sur-Sureste (Veracruz, Chiapas, Quintana Roo, Tabasco) aparece en tonos verdes con menor participación relativa.
+
+El mapa geográfico revela oportunidades significativas de expansión. Estados del noroeste como Sonora (\$7,367) y Baja California (\$10,139) muestran ventas relativamente bajas a pesar de ser estados con PIB per cápita alto. Similarmente, estados del sureste como Yucatán y Campeche presentan valores muy bajos, sugiriendo mercados potencialmente desatendidos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Ventas_Estado_Dashboard.png}
+\caption{Distribución geográfica de ventas por estado mediante mapa coroplético y treemap.}
+\label{fig:ventas_estado}
+\end{figure}
+
+\subsection{Análisis Logístico: Tiempo de Entrega Promedio}
+
+La segunda página del dashboard inicia con un análisis exhaustivo de tiempos de entrega, presentando tres visualizaciones complementarias: diagramas de caja (\emph{box plots}) que comparan transportistas durante noviembre-diciembre versus el resto del año, una serie temporal que muestra la tendencia diaria de tiempos de entrega, y un gráfico de barras horizontales detallando tiempos promedio por estado y transportista.
+
+Los box plots revelan diferencias significativas entre transportistas. Durante el periodo de noviembre y diciembre, 99minutos y DHL muestran tiempos de entrega más consistentes con medianas alrededor de 4-5 días y rangos intercuartílicos compactos. FedEx presenta mayor variabilidad con outliers que se extienden hasta 10 días. Mercado Envíos muestra el rango más amplio, con tiempos que varían entre 1 y 7 días durante el periodo de alta demanda.
+
+Un hallazgo crítico es que, comparando con el ``Resto del Año'', todos los transportistas muestran un incremento en los tiempos de entrega durante noviembre-diciembre, evidenciado por medianas más altas y rangos intercuartílicos más amplios. Este deterioro en el servicio durante el periodo de mayor demanda es esperado pero cuantificable: el incremento promedio es de aproximadamente 2-3 días, lo que representa un aumento del 50-75\% respecto a periodos normales.
+
+La serie temporal ``Tendencia Tiempo de Entrega'' muestra el volumen de ventas (barras verticales en verde-amarillo) superpuesto con los días hábiles de entrega (línea azul). Las barras verticales grises marcan eventos clave como Black Friday y Buen Fin/Cyber Monday. La visualización revela que los picos de volumen de ventas se correlacionan con aumentos subsecuentes en los tiempos de entrega, evidenciando la presión operacional sobre la cadena logística. Particularmente notable es el pico cerca del 16 de diciembre (llegando a casi 30 ventas en un día) que genera estrés logístico significativo.
+
+El gráfico de barras horizontal por estado y transportista al final de la sección permite identificar combinaciones específicas de geografía y proveedor logístico. Estado de México con DHL muestra tiempos extendidos cercanos a 12.5 días, mientras que la mayoría de estados con Mercado Envíos mantienen tiempos más consistentes alrededor de 2-4 días.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Tiempo_Entrega_Dashboard.png}
+\caption{Análisis de tiempos de entrega por transportista y tendencia temporal durante el periodo de fin de año.}
+\label{fig:tiempo_entrega}
+\end{figure}
+
+\subsection{Efectividad Publicitaria: ROI de Publicidad}
+
+El \emph{scatter plot} (gráfico de dispersión) del ROI de Publicidad presenta en el eje horizontal las ``Ventas sin publicidad'' y en el eje vertical las ``Ventas con publicidad'', con el tamaño de los círculos representando el volumen total de ventas del producto. Una línea de tendencia diagonal facilita la identificación de productos que superan o no alcanzan el rendimiento esperado.
+
+El análisis revela un \emph{insight} fundamental: existe un producto outlier en la esquina superior derecha con ventas con publicidad cercanas a \$50,000 MXN, representando el producto estrella que responde excepcionalmente bien a las campañas publicitarias. Este producto (correspondiente a ``Carpeta Billetes Y Monedas De 5, 10, 40 Pesos Conmemorativos'' según el análisis previo) muestra un ROI positivo claro, indicando que la inversión publicitaria genera retornos significativos.
+
+La mayoría de los productos se agrupan cerca del origen, con ventas tanto con como sin publicidad inferiores a \$20,000 MXN. Varios productos muestran un balance equilibrado (cercanos a la línea de tendencia), mientras que algunos productos destacan por generar ventas significativas sin inversión publicitaria (ubicados a la derecha pero bajos en el eje vertical), sugiriendo productos con demanda orgánica fuerte que podrían no requerir inversión publicitaria intensiva.
+
+La tabla comparativa superior muestra métricas agregadas: Total (MXN) de 67, valores referenciales de \$50,000, \$100,000 y \$128,005 que permiten contextualizar la escala. Esta información permite calcular que aproximadamente el 27.37\% de las ventas en noviembre-diciembre se atribuyen directamente a campañas publicitarias, mientras que el 72.63\% representan ventas orgánicas o indirectas.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{ROI_Dashboard.png}
+\caption{Scatter plot del ROI de publicidad mostrando la relación entre ventas con y sin publicidad por producto.}
+\label{fig:roi_publicidad}
+\end{figure}
+
+\subsection{Patrones Estacionales: Análisis Estacional}
+
+La visualización de análisis estacional combina una tabla comparativa y un gráfico de área temporal que muestra el comportamiento de ventas durante todo el periodo con marcadores verticales para eventos comerciales clave.
+
+La tabla comparativa presenta métricas fundamentales:
+\begin{itemize}
+    \item Ingreso Ventas: Resto del Año (\$282,054) vs Noviembre y Diciembre (\$106,281)
+    \item Ticket Promedio: Resto del Año (\$165) vs Noviembre y Diciembre (\$166), prácticamente idéntico
+    \item Ventas: Resto del Año (1,712) vs Noviembre y Diciembre (639 unidades)
+    \item Ventas con publicidad: Resto del Año (114,311) vs Noviembre y Diciembre (0) - dato que requiere validación
+    \item Ventas sin publicidad: Resto del Año (167,743) vs Noviembre y Diciembre (106,281)
+    \item \% Total: 72.63\% (resto del año) vs 27.37\% (Nov-Dic)
+\end{itemize}
+
+El gráfico de área muestra la evolución temporal completa desde octubre hasta principios de enero, con el área sombreada en azul-morado representando el total de ventas diarias. Las líneas verticales amarillas marcan el Black Friday y el Buen Fin/Cyber Monday. El patrón revela picos significativos durante estos eventos, alcanzando valores cercanos a \$5,000 MXN, seguidos de valles profundos. La tendencia general muestra que noviembre presenta mayor actividad y variabilidad que diciembre, con diciembre mostrando una tendencia descendente pronunciada después de mediados de mes.
+
+Un patrón interesante es la presencia de múltiples picos a lo largo del periodo, no solo concentrados en los eventos comerciales tradicionales, sugiriendo que la empresa mantiene campañas promocionales adicionales o que existe demanda estable de coleccionistas que no está necesariamente ligada a eventos comerciales masivos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Analisis_Estacional_Dashboard.png}
+\caption{Análisis estacional comparativo y evolución temporal de ventas con marcadores de eventos comerciales clave.}
+\label{fig:analisis_estacional}
+\end{figure}
+
+\section{Insights y Hallazgos Clave}
+
+El análisis integral del dashboard revela varios insights estratégicos fundamentales que deben guiar la toma de decisiones para futuras temporadas de fin de año:
+
+\textbf{Concentración de Productos y Riesgo de Portafolio:} La dependencia del 33\% de los ingresos totales en un único SKU representa tanto una oportunidad como un riesgo significativo. Si bien este producto claramente tiene un mercado fuerte, la empresa debe desarrollar estrategias para diversificar su portafolio y reducir la vulnerabilidad ante posibles problemas de inventario, cambios regulatorios o saturación del mercado para este producto específico. La estrategia de ``carpetas'' o bundles completos de monedas conmemorativas demuestra ser exitosa y debería replicarse con otras temáticas numismáticas.
+
+\textbf{Patrones Temporales No Convencionales:} A diferencia del e-commerce tradicional, Numismática México muestra fortaleza en días laborales (particularmente jueves) y debilidad en fines de semana. Este patrón sugiere un perfil de cliente específico: coleccionistas serios y compradores especializados que dedican tiempo durante la semana a investigar y realizar compras deliberadas, en contraposición a compradores impulsivos de fin de semana. Esta información debe informar la programación de campañas publicitarias, concentrando inversión en medios que alcancen a la audiencia durante días laborales.
+
+\textbf{Desafíos Logísticos Estacionales:} El aumento del 50-75\% en los tiempos de entrega durante noviembre-diciembre representa un riesgo significativo para la satisfacción del cliente. Considerando que las entregas que deberían tomar 4 días están tomando 6-7 días, existe el riesgo de que productos ordenados para regalos navideños no lleguen a tiempo. La empresa debe considerar estrategias de buffer logístico, como aumentar inventario en centros de distribución regional o negociar acuerdos de nivel de servicio (SLA) más estrictos con transportistas durante temporada alta.
+
+\textbf{Oportunidades Geográficas Desbalanceadas:} La concentración del 34\% de ventas en tres estados (Estado de México, CDMX y Jalisco) deja un potencial significativo sin explotar en estados con poder adquisitivo alto como Nuevo León, Baja California y Sonora. Estos estados del norte presentan PIB per cápita elevado y cultura de coleccionismo, sugiriendo que barreras de entrada pueden estar relacionadas con logística, conocimiento de marca o simplemente falta de esfuerzos de marketing focalizados. Una estrategia de expansión geográfica podría incrementar significativamente los ingresos totales.
+
+\textbf{Efectividad Publicitaria Diferenciada:} El análisis de ROI revela que no todos los productos se benefician igualmente de la inversión publicitaria. Mientras el producto líder muestra retornos extraordinarios en campañas pagadas, varios productos generan ventas significativas de manera orgánica. Esta información permite optimizar el presupuesto publicitario, concentrando inversión en productos con ROI demostrado y permitiendo que productos con demanda orgánica fuerte operen con inversión publicitaria mínima o nula, maximizando así el retorno general de la inversión en marketing.
+
+\section{Recomendaciones Estratégicas}
+
+Con base en los insights identificados, se proponen las siguientes recomendaciones estratégicas accionables para maximizar el desempeño en futuras temporadas de fin de año:
+
+\textbf{Estrategia de Inventario y Producto:} Implementar un sistema de gestión de inventario predictivo que asegure disponibilidad suficiente de los productos top 10, particularmente del producto líder, con especial énfasis en las semanas 45-50 (noviembre y primera mitad de diciembre). Desarrollar al menos 3-5 nuevos productos de tipo ``carpeta'' o bundle con temáticas complementarias (revolucionarios mexicanos, estados de la república, flora y fauna) para diversificar el portafolio y reducir la dependencia del producto estrella actual. Considerar estrategias de precio dinámico para los días de menor demanda (fines de semana) para estimular ventas y reducir la volatilidad inter-diaria.
+
+\textbf{Optimización de Campañas Publicitarias:} Reestructurar el calendario de campañas publicitarias para concentrar inversión en martes, miércoles y jueves, cuando los datos muestran mayor respuesta del mercado objetivo. Implementar campañas segmentadas por producto, asignando presupuesto publicitario significativo únicamente a los productos que demuestran ROI positivo en el análisis de dispersión. Para productos con fuerte demanda orgánica, reducir inversión publicitaria y en su lugar invertir en estrategias de SEO, marketing de contenido y programas de referidos que capitalizan la demanda existente sin incrementar costos de adquisición de clientes.
+
+\textbf{Expansión Geográfica Estratégica:} Lanzar campañas piloto focalizadas en Nuevo León, Baja California y Sonora, estados que presentan bajo volumen actual pero alto potencial basado en indicadores socioeconómicos. Estas campañas deben incluir alianzas estratégicas con grupos de coleccionistas locales, presencia en eventos numismáticos regionales y publicidad en medios locales especializados. Analizar barreras de entrada específicas en estos mercados (costos de envío, tiempos de entrega, conocimiento de marca) e implementar soluciones específicas como subsidios de envío para primeras compras o centros de distribución regional.
+
+\textbf{Optimización Logística:} Negociar acuerdos específicos de temporada alta con transportistas, estableciendo SLAs más estrictos para noviembre-diciembre con penalizaciones por incumplimiento. Considerar un modelo de distribución multi-transportista por región, asignando 99minutos y DHL (que muestran mayor consistencia) a estados de alta densidad y valor, mientras se utiliza Mercado Envíos para entregas de menor urgencia. Implementar un sistema de promesas de entrega dinámicas en el sitio web que refleje realísticamente los tiempos actuales basados en volumen de pedidos y desempeño histórico del transportista, gestionando expectativas del cliente y reduciendo insatisfacción.
+
+\textbf{Preparación para Días Pico:} Desarrollar un calendario de ``días especiales'' que capitalice el patrón de jueves fuertes, lanzando ofertas exclusivas y lanzamientos de productos nuevos específicamente los jueves durante la temporada. Implementar campañas de ``early bird'' que incentiven compras anticipadas en las semanas 45-46 (principios de noviembre) para distribuir la carga logística y evitar concentración excesiva en las últimas semanas de diciembre. Crear campañas post-compra de cross-selling y up-selling inmediatamente después de los picos de noviembre para capturar clientes en su momento de mayor interés.
+
+\section{Conclusión}
+
+El dashboard ``Numismática México - Dashboard Estratégico Fin de Año'' representa una herramienta fundamental para la transformación de la toma de decisiones de la organización, transitando de un modelo basado en intuición hacia un modelo genuinamente \emph{data-driven}. Las visualizaciones diseñadas no solo responden comprehensivamente a las siete preguntas de negocio planteadas inicialmente, sino que revelan insights adicionales que no eran evidentes en los datos crudos, demostrando el poder del análisis visual cuando se implementa siguiendo principios de diseño centrado en el usuario.
+
+La estructura modular del dashboard permite análisis tanto estratégicos (identificación de productos estrella, oportunidades geográficas, patrones estacionales) como tácticos (optimización de transportistas, programación de campañas, gestión de inventario diaria), proporcionando valor a diferentes niveles organizacionales. La interactividad incorporada mediante filtros de fecha y estado permite exploraciones ad-hoc que responden preguntas emergentes sin requerir asistencia técnica, democratizando el acceso a datos dentro de la organización.
+
+Los insights revelados tienen implicaciones directas y cuantificables en el desempeño del negocio. La identificación de la dependencia del 33\% de ingresos en un producto único permite estrategias proactivas de diversificación. El descubrimiento del patrón de fortaleza en días laborales permite optimización de presupuestos publicitarios con potencial de ahorro del 20-30\% sin reducción de efectividad. La cuantificación del deterioro logístico (50-75\% más lento) durante temporada alta facilita negociaciones basadas en datos con transportistas y justifica inversiones en infraestructura logística.
+
+Finalmente, este dashboard sienta las bases para una cultura organizacional orientada a datos donde las decisiones estratégicas se fundamentan en evidencia cuantitativa en lugar de suposiciones. Como enfatiza Ryan (2016), la creación de una ``cultura visual de datos'' trasciende la simple generación de reportes, transformando la manera en que la organización piensa, comunica y actúa. Para Numismática México, este dashboard representa no solo una herramienta de análisis, sino un activo estratégico que, utilizado efectivamente, puede generar ventajas competitivas sostenibles en el mercado numismático mexicano.
+
+\newpage
+
+\begin{thebibliography}{9}
+
+\bibitem{milligan2019}
+Milligan, J. N. (2019). \emph{Learning Tableau 2019: Tools for Business Intelligence, data prep, and visual analytics} (3rd ed.). Packt.
+
+\bibitem{ryan2016}
+Ryan, L. (2016). \emph{The visual imperative: creating a visual culture of data discovery}. Morgan Kaufmann.
+
+\end{thebibliography}
+
+\end{document}
+

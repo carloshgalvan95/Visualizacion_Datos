@@ -1193,3 +1193,8 @@ Has completado las 5 visualizaciones del **KPI 7 - Análisis Estacional**:
 *Guía creada para Numismática México - MNA Visualización de Datos*  
 *Octubre 2025*
 
+
+
+
+
+
