@@ -1,0 +1,247 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.6\textwidth]{logo.jpg}\\
+\end{figure}
+
+\vspace{1cm}
+\Large \sc  Instituto Tecnológico y de Estudios Superiores de Monterrey
+\\
+
+\vspace{2.5cm}
+\Large \bf
+\emph{Actividad 7: Investigación sobre Software de IA para Visualización de Datos}
+
+\vspace{2cm}
+\large \bf Carlos  Humberto Galvan Perales\\
+
+\vspace{0.5cm}
+\normalsize 
+A01797969\\
+
+\vspace{2.5cm}
+\normalsize \sc \rightline{Maestría en Inteligencia Artificial Aplicada}
+\vspace{0.3cm}
+\normalsize \sc \rightline{TC4057.10 Visualización de Datos}
+\vspace{0.3cm}
+\normalsize \sc \rightline{9 de noviembre de 2025}
+
+\end{center}
+
+\newpage
+
+\section{Introducción}
+
+En la era de la transformación digital, la capacidad de convertir datos complejos en visualizaciones comprensibles y accionables se ha convertido en una competencia fundamental para las organizaciones modernas. La convergencia entre la inteligencia artificial (IA) y las herramientas de visualización de datos ha revolucionado la manera en que las empresas analizan información, descubren patrones ocultos y comunican insights críticos para la toma de decisiones estratégicas.
+
+Las plataformas de visualización de datos potenciadas por IA no solo automatizan la creación de gráficos y dashboards, sino que también incorporan capacidades avanzadas como el procesamiento de lenguaje natural (NLP), análisis predictivo, detección automática de anomalías y generación de narrativas inteligentes. Estas funcionalidades permiten democratizar el acceso a los datos, facilitando que usuarios no técnicos puedan realizar análisis sofisticados mediante interfaces conversacionales e intuitivas.
+
+El presente ensayo analiza tres plataformas líderes en el ámbito de la visualización de datos con IA: Microsoft Power BI con Copilot, Tableau con Einstein AI, y ThoughtSpot. Se examinarán sus funcionalidades principales, capacidades de integración y automatización, casos de uso prácticos, y se realizará una comparación sistemática considerando criterios como facilidad de uso, capacidades de storytelling, personalización y estructura de costos. Finalmente, se reflexionará sobre el impacto organizacional de implementar estas tecnologías y sus implicaciones para el futuro del análisis de datos.
+
+\section{Análisis de Herramientas de Visualización de Datos con IA}
+
+\subsection{Microsoft Power BI con Copilot}
+
+\textbf{Proveedor y sitio web:} Microsoft Corporation. \url{https://powerbi.microsoft.com/}
+
+\textbf{Funcionalidades principales:} Power BI, la plataforma de inteligencia de negocios de Microsoft, ha integrado Copilot, un asistente de IA conversacional que transforma radicalmente la experiencia de análisis de datos. Esta integración permite a los usuarios formular preguntas complejas en lenguaje natural y recibir visualizaciones instantáneas, resúmenes ejecutivos y respuestas contextualizadas sin necesidad de escribir código o conocer fórmulas DAX (Data Analysis Expressions).
+
+Las capacidades de storytelling de Power BI con Copilot incluyen la generación automática de narrativas que explican tendencias, anomalías y patrones identificados en los datos. El sistema puede crear dashboards interactivos completos a partir de simples descripciones textuales del objetivo de negocio. Además, ofrece análisis de sensibilidad que explica qué factores influyen más en las métricas clave, facilitando la comprensión causal de los fenómenos observados.
+
+\textbf{Capacidades de integración y automatización:} Power BI se integra de manera nativa con todo el ecosistema de Microsoft, incluyendo Excel, Azure, SharePoint, Teams y Dynamics 365. Esta integración permite a las organizaciones centralizar datos de múltiples fuentes heterogéneas: bases de datos relacionales (SQL Server, Oracle, MySQL), servicios en la nube (Azure Data Lake, Salesforce, Google Analytics), archivos planos y APIs REST.
+
+La automatización es un pilar fundamental de la plataforma. Power BI ofrece flujos de datos (dataflows) que permiten la extracción, transformación y carga (ETL) automatizada de información. Los conjuntos de datos pueden configurarse para actualizarse en intervalos programados o en tiempo real mediante DirectQuery y Live Connection. La gobernanza de datos se gestiona centralmente mediante workspaces y la publicación de informes puede automatizarse mediante APIs y Power Automate.
+
+\textbf{Casos de uso y aplicaciones prácticas:} Power BI es ampliamente utilizado en sectores como finanzas, manufactura, retail y salud. Por ejemplo, empresas minoristas emplean Power BI para analizar patrones de compra, optimizar inventarios y personalizar estrategias de marketing. En el sector financiero, se utiliza para monitorear indicadores de riesgo, detectar fraudes mediante análisis de anomalías, y generar reportes regulatorios automatizados. Instituciones académicas utilizan Power BI para analizar métricas de desempeño estudiantil, tasas de retención y efectividad de programas educativos.
+
+\subsection{Tableau con Einstein AI}
+
+\textbf{Proveedor y sitio web:} Salesforce, Inc. \url{https://www.tableau.com/}
+
+\textbf{Funcionalidades principales:} Tableau, adquirido por Salesforce en 2019, es reconocido por sus capacidades de visualización avanzadas y su interfaz intuitiva basada en drag-and-drop. La integración con Einstein AI, la plataforma de inteligencia artificial de Salesforce, ha elevado significativamente las capacidades analíticas de Tableau.
+
+Einstein Discovery, el motor de IA de Tableau, proporciona análisis predictivos automatizados que identifican los factores más relevantes que influyen en los resultados de negocio y generan modelos de machine learning sin requerir expertise en ciencia de datos. El sistema genera narrativas automatizadas en lenguaje natural que explican los hallazgos, haciendo que insights complejos sean accesibles para audiencias no técnicas.
+
+Tableau Pulse, introducido recientemente, ofrece alertas inteligentes que notifican a los usuarios sobre cambios significativos en las métricas clave, anomalías o cuando se cumplen condiciones específicas. Ask Data permite a los usuarios hacer preguntas en lenguaje natural y obtener visualizaciones relevantes instantáneamente, democratizando el acceso a los datos dentro de la organización.
+
+\textbf{Capacidades de integración y automatización:} Tableau soporta conexiones nativas con más de 80 fuentes de datos diferentes, incluyendo bases de datos relacionales, almacenes de datos en la nube (Snowflake, BigQuery, Redshift), aplicaciones SaaS (Salesforce, Google Analytics, SAP) y servicios web mediante conectores REST.
+
+La plataforma ofrece Tableau Prep para la preparación y limpieza automatizada de datos, permitiendo crear flujos de transformación reutilizables que se ejecutan según programación. Tableau Server y Tableau Online facilitan la publicación centralizada de dashboards y la gestión de permisos granulares. La automatización de distribución de reportes se puede configurar mediante suscripciones por correo electrónico o integración con Slack y Microsoft Teams.
+
+\textbf{Casos de uso y aplicaciones prácticas:} Tableau es preferido en organizaciones que requieren visualizaciones altamente personalizadas y exploración profunda de datos. En el sector salud, hospitales utilizan Tableau para visualizar tendencias epidemiológicas, optimizar la asignación de recursos y mejorar los resultados de pacientes. Empresas de logística emplean Tableau para optimizar rutas de distribución, monitorear tiempos de entrega y reducir costos operativos. Organizaciones sin fines de lucro lo utilizan para visualizar el impacto de sus programas y comunicar resultados a donantes y stakeholders.
+
+\subsection{ThoughtSpot}
+
+\textbf{Proveedor y sitio web:} ThoughtSpot, Inc. \url{https://www.thoughtspot.com/}
+
+\textbf{Funcionalidades principales:} ThoughtSpot se distingue por su enfoque en búsqueda de datos impulsada por IA, posicionándose como el ``Google de los datos empresariales''. La plataforma utiliza un motor de búsqueda en lenguaje natural que permite a los usuarios hacer preguntas complejas como lo harían en un motor de búsqueda web, obteniendo visualizaciones y respuestas instantáneas.
+
+La característica distintiva de ThoughtSpot es SpotIQ, su motor de IA que automáticamente analiza miles de combinaciones de datos para identificar insights ocultos, tendencias emergentes, anomalías y correlaciones que los analistas humanos podrían pasar por alto. SpotIQ genera análisis automatizados que se presentan como tarjetas de insights con explicaciones en lenguaje natural, priorizadas por relevancia y significancia estadística.
+
+La plataforma también ofrece capacidades de análisis predictivo y modelado what-if, permitiendo a los usuarios simular escenarios y evaluar el impacto potencial de decisiones estratégicas. Las funcionalidades de storytelling incluyen la creación de tableros narrativos (pinboards) que combinan visualizaciones con texto explicativo, facilitando la comunicación de hallazgos complejos.
+
+\textbf{Capacidades de integración y automatización:} ThoughtSpot se conecta a una amplia variedad de fuentes de datos, incluyendo data warehouses modernos (Snowflake, Databricks, BigQuery), bases de datos tradicionales y servicios en la nube. Utiliza tecnología in-memory y caché inteligente para proporcionar tiempos de respuesta subsecundos incluso con billones de filas de datos.
+
+La automatización se logra mediante ThoughtSpot Sync, que mantiene los datos actualizados en tiempo real mediante conectores de streaming. La plataforma ofrece APIs robustas que permiten embeber capacidades de búsqueda y visualización en aplicaciones personalizadas. El proceso de modelado de datos puede automatizarse parcialmente mediante el reconocimiento de relaciones y tipos de datos.
+
+\textbf{Casos de uso y aplicaciones prácticas:} ThoughtSpot es adoptado por organizaciones que buscan democratizar el acceso a datos y reducir la dependencia de equipos centralizados de BI. En el sector financiero, instituciones utilizan ThoughtSpot para análisis de riesgo crediticio y detección de fraude en tiempo real. Empresas de e-commerce lo emplean para analizar comportamiento de clientes, optimizar experiencias de usuario y personalizar recomendaciones de productos. Organizaciones de telecomunicaciones lo usan para analizar patrones de uso, predecir churn de clientes y optimizar planes de servicio.
+
+\section{Comparación Sistemática de las Herramientas}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|l|X|X|X|}
+\hline
+\textbf{Criterio} & \textbf{Power BI con Copilot} & \textbf{Tableau con Einstein AI} & \textbf{ThoughtSpot} \\
+\hline
+\textbf{Facilidad de uso} & Alta, especialmente para usuarios familiarizados con Microsoft. Interfaz intuitiva con asistencia conversacional de Copilot. & Curva de aprendizaje moderada. Interfaz visual potente pero requiere capacitación para funcionalidades avanzadas. & Muy alta. La interfaz de búsqueda es familiar para cualquier usuario de internet. Mínima capacitación requerida. \\
+\hline
+\textbf{Capacidades de storytelling} & Narrativas automáticas generadas por IA. Integración con PowerPoint para presentaciones. & Narrativas avanzadas con Einstein Discovery. Dashboards altamente personalizables con capacidades de diseño superiores. & SpotIQ genera insights automáticos con explicaciones. Pinboards narrativos que combinan visualizaciones con contexto. \\
+\hline
+\textbf{Personalización} & Amplia personalización mediante DAX y Power Query. Limitada por plantillas de visualización estándar. & Máxima personalización y flexibilidad. Capacidad para crear visualizaciones completamente customizadas. & Personalización limitada en visualizaciones individuales, enfocada en rapidez sobre diseño complejo. \\
+\hline
+\textbf{Análisis predictivo} & Integración con Azure Machine Learning. Capacidades predictivas mediante AutoML. & Einstein Discovery proporciona modelos predictivos automatizados con explicabilidad. & SpotIQ realiza análisis automatizado de tendencias y anomalías. Capacidades predictivas en desarrollo. \\
+\hline
+\textbf{Estructura de costos} & Muy competitivo. Plan gratuito disponible. Power BI Pro: \$10/usuario/mes. Premium: desde \$4,995/mes. & Premium. Tableau Creator: \$70/usuario/mes. Viewer: \$15/usuario/mes. Costos adicionales por Einstein Analytics. & Premium. Pricing personalizado, típicamente \$95-\$125/usuario/mes para implementaciones empresariales. \\
+\hline
+\textbf{Integración} & Excelente con ecosistema Microsoft. Buena con fuentes externas mediante conectores. & Amplia conectividad (80+ conectores). Excelente integración con Salesforce. & Buena conectividad con warehouses modernos. APIs robustas para embedding. \\
+\hline
+\textbf{Escalabilidad} & Alta, especialmente con Power BI Premium y capacidad dedicada. & Alta, diseñado para grandes volúmenes de datos. & Muy alta, optimizado para análisis de billones de filas mediante tecnología in-memory. \\
+\hline
+\end{tabularx}
+\caption{Comparación multidimensional de plataformas de visualización con IA}
+\end{table}
+
+\section{Reflexión sobre Ventajas, Limitaciones y Aplicaciones}
+
+\subsection{Ventajas de las Tecnologías de Visualización con IA}
+
+Las herramientas de visualización de datos potenciadas por IA ofrecen ventajas transformadoras que redefinen el paradigma tradicional del análisis de datos:
+
+\textbf{Democratización del análisis de datos:} La principal ventaja es la capacidad de empoderar a usuarios no técnicos para realizar análisis sofisticados sin depender de analistas especializados. Las interfaces conversacionales y la búsqueda en lenguaje natural eliminan barreras técnicas, permitiendo que cualquier profesional explore datos, formule hipótesis y obtenga respuestas inmediatas.
+
+\textbf{Descubrimiento automatizado de insights:} Los motores de IA pueden analizar sistemáticamente millones de combinaciones de variables, identificando patrones, correlaciones y anomalías que serían imposibles de detectar manualmente. Esto no solo acelera el proceso de análisis, sino que también reduce el sesgo cognitivo humano y descubre oportunidades inesperadas.
+
+\textbf{Eficiencia operativa y reducción de tiempo:} Lo que tradicionalmente requería días o semanas de trabajo de analistas—extraer datos, limpiarlos, modelarlos, visualizarlos y generar reportes—ahora puede realizarse en minutos. Esta aceleración permite a las organizaciones responder más rápidamente a cambios del mercado y tomar decisiones basadas en información actualizada.
+
+\textbf{Narrativas automatizadas y explicabilidad:} La generación automática de explicaciones en lenguaje natural hace que los insights complejos sean comprensibles para audiencias diversas, desde ejecutivos hasta personal operativo. Esto facilita la alineación organizacional y la toma de decisiones informadas en todos los niveles.
+
+\textbf{Escalabilidad y consistencia:} Una vez configurados, los flujos de análisis y visualización pueden replicarse consistentemente a través de diferentes departamentos, productos o regiones geográficas, asegurando que todos los stakeholders trabajen con métricas e insights estandarizados.
+
+\subsection{Limitaciones y Desafíos}
+
+A pesar de sus ventajas, estas tecnologías presentan limitaciones que las organizaciones deben considerar cuidadosamente:
+
+\textbf{Costo de implementación y mantenimiento:} Las plataformas premium pueden representar inversiones significativas, especialmente para organizaciones medianas y pequeñas. Más allá de las licencias, existen costos ocultos relacionados con infraestructura (servidores, almacenamiento en la nube), capacitación del personal y consultoría para implementación.
+
+\textbf{Curva de aprendizaje y resistencia al cambio:} Aunque las interfaces son cada vez más intuitivas, aprovechar completamente las capacidades avanzadas requiere capacitación sustancial. La resistencia organizacional al cambio puede limitar la adopción, especialmente en culturas empresariales tradicionales donde las decisiones históricamente se basaban en intuición más que en datos.
+
+\textbf{Dependencia de la calidad de datos:} El principio ``garbage in, garbage out'' aplica plenamente. Los insights generados por IA son tan confiables como los datos subyacentes. Datos incompletos, inconsistentes o sesgados producirán visualizaciones y conclusiones erróneas que pueden llevar a decisiones equivocadas con consecuencias costosas.
+
+\textbf{Riesgos de sobreconfianza en la automatización:} Existe el peligro de que los usuarios acepten acríticamente los insights generados por IA sin cuestionar las suposiciones subyacentes, las limitaciones estadísticas o el contexto de negocio. La alfabetización en datos sigue siendo esencial para interpretar correctamente los resultados.
+
+\textbf{Privacidad y seguridad de datos:} La centralización de datos en plataformas en la nube genera preocupaciones legítimas sobre seguridad, cumplimiento regulatorio (GDPR, CCPA) y riesgo de brechas de información. Las organizaciones deben implementar gobernanza robusta y controles de acceso granulares.
+
+\textbf{Limitaciones en personalización y casos de uso especializados:} Si bien estas plataformas son extremadamente versátiles, casos de uso altamente especializados o visualizaciones completamente customizadas pueden requerir herramientas complementarias o desarrollo a medida mediante bibliotecas de código abierto (D3.js, Plotly, Altair).
+
+\subsection{Aplicaciones Potenciales en Contextos Profesionales y Académicos}
+
+En el \textbf{ámbito profesional}, estas herramientas tienen aplicaciones transversales:
+\begin{itemize}
+\item \textbf{Finanzas:} Análisis de riesgo, modelado de escenarios, detección de fraude, reportes regulatorios automatizados.
+\item \textbf{Marketing:} Análisis de comportamiento de clientes, segmentación avanzada, optimización de campañas, análisis de sentimiento en redes sociales.
+\item \textbf{Operaciones:} Optimización de cadena de suministro, análisis de eficiencia operativa, mantenimiento predictivo de equipos.
+\item \textbf{Recursos Humanos:} Análisis de retención de talento, identificación de patrones de desempeño, planificación de fuerza laboral.
+\end{itemize}
+
+En el \textbf{contexto académico}, estas plataformas enriquecen tanto la investigación como la enseñanza:
+\begin{itemize}
+\item Facilitan el análisis exploratorio de datos en proyectos de investigación, permitiendo a los investigadores identificar hipótesis y validar teorías con mayor rapidez.
+\item Permiten a los estudiantes de programas de maestría y doctorado trabajar con conjuntos de datos reales y herramientas utilizadas en la industria, preparándolos mejor para el mercado laboral.
+\item Apoyan la enseñanza de conceptos estadísticos y analíticos mediante visualizaciones interactivas que hacen que ideas abstractas sean tangibles.
+\item Permiten a instituciones educativas analizar métricas de desempeño académico, identificar estudiantes en riesgo y evaluar la efectividad de intervenciones pedagógicas.
+\end{itemize}
+
+\section{Evaluación del Impacto Organizacional}
+
+La implementación de herramientas de visualización de datos con IA puede catalizar transformaciones profundas en las organizaciones, pero su éxito depende de factores que trascienden la tecnología:
+
+\textbf{Transformación cultural hacia una organización data-driven:} El impacto más significativo es cultural. Estas herramientas pueden facilitar la transición de una cultura de decisión basada en intuición y jerarquía hacia una donde las decisiones se fundamentan en evidencia empírica y están democratizadas. Esto requiere liderazgo comprometido que modele el uso de datos y celebre decisiones informadas.
+
+\textbf{Mejora en velocidad y calidad de decisiones:} Con acceso a insights en tiempo real, las organizaciones pueden responder más ágilmente a cambios del mercado, identificar oportunidades emergentes y mitigar riesgos antes de que se materialicen. La capacidad de realizar análisis what-if permite evaluar el impacto potencial de diferentes estrategias antes de comprometer recursos.
+
+\textbf{Retorno sobre inversión (ROI):} Si bien el ROI varía según la industria y el caso de uso, estudios indican que organizaciones que implementan exitosamente plataformas de BI con IA pueden lograr mejoras de 10-15\% en eficiencia operativa, reducciones de 20-30\% en tiempo dedicado a generación de reportes, y aumentos de 5-10\% en ingresos mediante mejor identificación de oportunidades de negocio.
+
+\textbf{Desafíos de implementación:} El éxito de la implementación requiere:
+\begin{itemize}
+\item \textbf{Estrategia clara de datos:} Definir qué datos son críticos, cómo se gobernarán, y qué preguntas de negocio se busca responder.
+\item \textbf{Infraestructura adecuada:} Asegurar que la arquitectura de datos pueda soportar los volúmenes y velocidades requeridas.
+\item \textbf{Capacitación continua:} Invertir en desarrollo de habilidades analíticas en todos los niveles organizacionales.
+\item \textbf{Gestión del cambio:} Abordar la resistencia mediante comunicación clara de beneficios y apoyo a usuarios durante la transición.
+\end{itemize}
+
+\textbf{Diferenciación competitiva sostenible:} En mercados cada vez más competitivos, la capacidad de extraer valor de los datos se está convirtiendo en una competencia fundamental. Organizaciones que dominan estas herramientas pueden personalizar experiencias de clientes, optimizar operaciones y anticipar tendencias, creando ventajas competitivas difíciles de replicar.
+
+\section{Conclusiones}
+
+Las herramientas de visualización de datos potenciadas por inteligencia artificial representan una evolución significativa en la capacidad organizacional para transformar información en conocimiento accionable. Microsoft Power BI con Copilot, Tableau con Einstein AI y ThoughtSpot ejemplifican cómo la convergencia entre IA, análisis de datos y diseño de experiencia de usuario está democratizando el acceso a insights sofisticados.
+
+La selección de la plataforma óptima debe basarse en un análisis multifactorial que considere: (1) el ecosistema tecnológico existente y preferencias de integración, (2) las capacidades técnicas del equipo y su disposición a invertir en capacitación, (3) los requisitos específicos de personalización y complejidad analítica, (4) las restricciones presupuestarias y el modelo de costos preferido, y (5) los objetivos estratégicos de transformación digital de la organización.
+
+Para organizaciones profundamente integradas en el ecosistema de Microsoft y con presupuestos limitados, Power BI con Copilot ofrece una relación costo-beneficio excepcional. Empresas que priorizan visualizaciones altamente personalizadas y capacidades analíticas avanzadas, particularmente aquellas ya utilizando Salesforce, encontrarán en Tableau con Einstein AI la plataforma más robusta. Organizaciones que buscan democratizar radicalmente el acceso a datos y minimizar dependencias de equipos centralizados de BI se beneficiarán del enfoque de búsqueda de ThoughtSpot.
+
+Más allá de la elección tecnológica, el éxito último depende de factores organizacionales: liderazgo comprometido con la transformación data-driven, inversión sostenida en desarrollo de capacidades analíticas, gobernanza robusta de datos, y una cultura que valore la experimentación y el aprendizaje continuo. Las organizaciones que logran alinear estos elementos experimentarán no solo mejoras operativas, sino transformaciones fundamentales en su capacidad para competir y crear valor en la economía digital.
+
+\begin{thebibliography}{9}
+
+% Páginas web de herramientas
+\bibitem{1}
+Microsoft Power BI: Documentation and learning resources. Microsoft Corporation. \\ \url{https://powerbi.microsoft.com/} (visitado 09-11-2025)
+
+\bibitem{2}
+Tableau: Business intelligence and analytics software. Salesforce, Inc. \\ \url{https://www.tableau.com/} (visitado 09-11-2025)
+
+\bibitem{3}
+ThoughtSpot: AI-powered analytics. ThoughtSpot, Inc. \\ \url{https://www.thoughtspot.com/} (visitado 09-11-2025)
+
+% Reportes de consultoría
+\bibitem{4}
+Gartner, Inc. \emph{Magic Quadrant for Analytics and Business Intelligence Platforms}. Gartner Research, 2024.
+
+\bibitem{5}
+McKinsey \& Company. \emph{The State of AI in 2023: Generative AI's Breakout Year}. McKinsey Global Survey, 2023.
+
+% Libros académicos
+\bibitem{6}
+T. H. Davenport and J. G. Harris, \emph{Competing on Analytics: Updated, with a New Introduction: The New Science of Winning}. Harvard Business Press, 2020.
+
+\bibitem{7}
+S. Few, \emph{Show Me the Numbers: Designing Tables and Graphs to Enlighten}, 2nd ed. Analytics Press, 2012.
+
+\bibitem{8}
+C. N. Knaflic, \emph{Storytelling with Data: A Data Visualization Guide for Business Professionals}. John Wiley \& Sons, 2015.
+
+\bibitem{9}
+R. Kimball and M. Ross, \emph{The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling}, 3rd ed. John Wiley \& Sons, 2013.
+
+\end{thebibliography}
+
+\end{document}
+
